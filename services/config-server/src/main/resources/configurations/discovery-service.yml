@@ -1,0 +1,20 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+server:
+  port: 8761
+
+
+#eureka.instance.hostname: Specifies the hostname under which the Eureka client will register itself with the Eureka server. In this case, it's set to localhost, meaning the client will register itself with Eureka using localhost as its hostname.
+#
+#eureka.client.registerWithEureka: Specifies whether this application instance should register itself with the Eureka server. Here, it's set to false, meaning this application instance will not register itself with Eureka.
+#
+#eureka.client.fetchRegistry: Specifies whether this application instance should fetch the registry information from the Eureka server. It's set to false, indicating that this instance will not fetch the registry from the Eureka server.
+#
+#eureka.client.serviceUrl.defaultZone: Specifies the URL of the Eureka server's registry. ${eureka.instance.hostname} and ${server.port} are placeholders that will be resolved to localhost and 8761 respectively. So, the defaultZone URL becomes http://localhost:8761/eureka/.
