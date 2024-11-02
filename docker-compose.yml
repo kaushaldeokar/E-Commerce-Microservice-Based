@@ -4,7 +4,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: kaushald
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_PASSWORD: kaushald
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
@@ -46,7 +46,7 @@ services:
       - mongo:/data
     environment:
       - MONGO_INITDB_ROOT_USERNAME=kaushald
-      - MONGO_INITDB_ROOT_PASSWORD=1234
+      - MONGO_INITDB_ROOT_PASSWORD=kaushald
 
   mongo-express:
     image: mongo-express
@@ -56,10 +56,10 @@ services:
       - 8081:8081
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=kaushald
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=1234
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=kaushald
       - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_BASICAUTH_USERNAME=admin
-      - ME_CONFIG_BASICAUTH_PASSWORD=admin123
+      - ME_CONFIG_BASICAUTH_USERNAME=kaushald
+      - ME_CONFIG_BASICAUTH_PASSWORD=kaushald
       # added basic auth crediatails
   zookeeper:
     image: confluentinc/cp-zookeeper:latest

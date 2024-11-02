@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
 
+//@Validated - so that data is validated before the method is been executed / called .
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

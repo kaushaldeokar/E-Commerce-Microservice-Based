@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+//The @RequiredArgsConstructor annotation from Lombok generates a constructor with required arguments for a class, specifically for all final fields and any fields that are marked with @NonNull. This is particularly useful in Spring controller classes, where you often want to inject dependencies through constructor injection.
+
 @RestController
 @RequestMapping("/api/v1/customers")
 @RequiredArgsConstructor
 public class CustomerController {
 
-  private final CustomerService service;
+  private final CustomerService service;//require dependency injection
 
   @PostMapping
   public ResponseEntity<String> createCustomer(
